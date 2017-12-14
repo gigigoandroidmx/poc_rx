@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
         presenter = new MainPresenter(this);
         if (presenter != null)
             presenter.getClient();
-        //binding.setVM(VM);
     }
 
     @Override

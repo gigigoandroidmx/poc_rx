@@ -22,13 +22,9 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation project(':kbase')
-    implementation project(':kmvp')
-    implementation project(':kretofitmanager')
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.0.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
@@ -43,11 +39,16 @@ dependencies {
     //implementation "com.google.dagger:dagger-android-support:2.11" //new
     //annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     //annotationProcessor "com.google.dagger:dagger-android-processor:2.11" //new
-
     //implementation 'com.google.dagger:dagger:2.11'
     //implementation "com.google.dagger:dagger-android:2.11" //new
     //implementation 'com.google.code.findbugs:jsr305:3.0.1'
     //androidTestCompile 'com.google.code.findbugs:jsr305:3.0.1'
     //provided 'javax.annotation:jsr250-api:1.0'
-
+    //Kripton
+    // mvp
+    compile 'com.github.gigigoandroidmx.kripton:kmvp:v2.0.1'
+    // extensiones retrofit
+    compile 'com.github.gigigoandroidmx.kripton:kretrofitmanager:v2.0.1'
+    // view base
+    compile 'com.github.gigigoandroidmx.kripton:kbase:v2.0.1'
 }

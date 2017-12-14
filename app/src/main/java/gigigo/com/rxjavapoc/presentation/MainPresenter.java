@@ -2,8 +2,6 @@ package gigigo.com.rxjavapoc.presentation;
 
 import android.util.Log;
 
-import java.util.logging.Logger;
-
 import gigigo.com.rxjavapoc.domain.entity.ClientResponse;
 import gigigo.com.rxjavapoc.domain.interactor.ClientInteractor;
 import gigigo.com.rxjavapoc.modules.main.MainView;
@@ -15,7 +13,7 @@ import io.reactivex.disposables.Disposable;
  * Created by carlosgarcia on 13/12/17.
  */
 
-public class MainPresenter {
+public class MainPresenter {//extends KPresenter<MainView> {
 
     MainView view;
     ClientInteractor interactor;
@@ -23,8 +21,11 @@ public class MainPresenter {
     //@Inject
     //ClientInteractor interactor;
     public MainPresenter(MainView view) {
+    //public MainPresenter() {
         this.view = view;
         interactor = new ClientInteractor();
+
+        interactor.setParams("53114150705", "37b00b3767924097913a66004c909507", "87a58b789e4b4c4d963DF835D6426765", "NTMxMTQxNTA3MDU6OTI0NzMx");
     }
 
     public void getClient() {
@@ -47,7 +48,7 @@ public class MainPresenter {
                         @Override
                         public void onError(Throwable e) {
                             //Timber.e("Error on food search:%s", e.getMessage());
-                            Log.i("Route2dListPresenter", "error");
+                            Log.i("request Client", "error " + e.getMessage());
                         }
 
                         @Override
@@ -55,11 +56,18 @@ public class MainPresenter {
                             //Timber.e("Models received:%s", baseResponseModel.toString());
                             //if (doIfView())
                             //    route2dListView.get().presentFoodSearch(baseResponseModel);
-                            Log.i("PersonalData", "resultado ok");
+                            Log.i("request Client", "resultado ok");
                             view.showMessage("resultado ok");
+                            //getView().showMessage("resultado ok");
                         }
 
                     });
 
     }
+
+    //@Override
+    //public void onBusRegister() {}
+
+    //@Override
+    //public void onBusUnregister() {}
 }
