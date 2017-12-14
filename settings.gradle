@@ -1,0 +1,1 @@
+include ':app', ':kbase', ':kmvp', ':kretofitmanager'
